@@ -1,32 +1,32 @@
-import time
-import os
-import platform
-import matplotlib.pyplot as plt
-from PIL import Image
+import time # 현재 시간을 가지고 오는 모듈
+import os # 프로그램을 돌리는 컴퓨터의 운영체제를 검사할 수 있도록 하기위한  모듈
+import platform # 현재 사용하고 시스템 유형을 알려주는 모듈
+import matplotlib.pyplot as plt # 파이썬과 그림파일을 연결하여 원하는 이미지파일이 실행되게 하기위한 모듈
+from PIL import Image # 파이썬과 그림파일을 연결하여 원하는 이미지파일이 실행되게 하기위한 모듈
 
 
-def clear(): #
+def clear(): # window 에 경우는  cls 이지만 ios 맥을 사용하는 사람의 경우 clear 으로 명령어가 다르기때문에 def 로 정의하여 표현
     os_type = platform.system()
-    if os_type == 'Windows':
-        os.system('cls')
+    if os_type == 'Windows': # 윈도우 일 경우
+        os.system('cls') # window 시스템의 cls 기능 실행
     else:
-        os.system('clear')
+        os.system('clear') #  아닐경우 ios운영체제일 경우 이므로 clear 기능 실행
 
 
-clear()
+clear() # 화면 클리어 하기
 while True:
     print("무료 성격 유형 검사 입니다.")
 
     a = 0
     b = 0
-    time.sleep(1)
+    time.sleep(1) #화면 잠시 멈춤 sleep()는 잠시동안 멈춤을 유지
     clear()
     print("조별 과제에 당신의 역활은?")
     print("1.자료 조사 및 정리")
     print("2.정리된 자료로 PPT 만들기 ( 발표 빼고")
-    q1 = int(input("번호를 입력해주세요:"))
+    q1 = int(input("번호를 입력해주세요:")) # int 정수값으로 변환
 
-    if q1 == 1:
+    if q1 == 1: # 1번을 선택할 경우  a에 1이 추가가 되어 나중에 a 와 b 값의 경우의수로 다른 결과값을 출력하기 위한 축적
         a += 1
     if q1 == 2:
         b += 1
